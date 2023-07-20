@@ -1,0 +1,4 @@
+// alert("hola");
+$(".tablas").DataTable();
+    
+    
