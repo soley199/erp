@@ -246,18 +246,17 @@
                   aria-labelledby="navbarDropdown"
                 >
                   <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-account me-1 ms-1"></i> My Profile</a
+                    ><i class="mdi mdi-account me-1 ms-1"></i> <?php echo $_SESSION["datosUsuario"]["nombre"].' - '.$_SESSION["datosUsuario"]["numTarjeta"] ;?></a
                   >
                   <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-wallet me-1 ms-1"></i> My Balance</a
+                    ><i class="mdi mdi-wallet me-1 ms-1"></i> <?php echo $_SESSION["datosUsuario"]["puesto"];?></a
                   >
                   <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-email me-1 ms-1"></i> Inbox</a
+                    ><i class="mdi mdi-email me-1 ms-1"></i> <?php echo $_SESSION["datosUsuario"]["sistemaPerfil"];?></a
                   >
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-settings me-1 ms-1"></i> Account
-                    Setting</a
+                    ><i class="mdi mdi-settings me-1 ms-1"></i> Configuracion de Cuenta</a
                   >
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="arb_salir"

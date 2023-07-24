@@ -34,63 +34,50 @@
                     <br>
                     <br>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered tablas">
+                        <table class="tablas table table-striped  dataTable" style="width:100%" >
                             <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>#Tarjeta</th>
                                     <th>Nombre Completo</th>
                                     <th>Sexo</th>
-                                    <th>Foto</th>
                                     <th>Puesto</th>
                                     <th>Estatus</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>837</td>
-                                    <td>Marco Antonio Enciso Garcia</td>
-                                    <td>Hombre</td>
-                                    <td></td>
-                                    <td>Coordinador de Sistemas</td>
-                                    <td>
-                                        <button type="button" class="btn btn-success btn-sm text-white">Activo</button>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-warning"><i class="mdi mdi-account-edit" data-bs-toggle="modal" data-bs-target="#modalAgregarTrabajador"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="mdi mdi-close-circle"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>837</td>
-                                    <td>Marco Antonio Enciso Garcia</td>
-                                    <td>Hombre</td>
-                                    <td></td>
-                                    <td>Coordinador de Sistemas</td>
-                                    <td>
-                                        <button type="button" class="btn btn-success btn-sm text-white">Activo</button>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-warning"><i class="mdi mdi-account-edit"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="mdi mdi-close-circle"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <?php 
+                                $columna = null;
+                                $valor =  null;
+                                $Trabajadores = ControladorUsuarios::ctrMostrarTrabajadores($columna,$valor);
                                 
-
+                                foreach($Trabajadores as $key =>$value){
+                                    echo '
+                                    <tr>
+                                        <td>1</td>
+                                        <td>'.$value["numTarjeta"].'</td>
+                                        <td>'.$value["nombre"].'</td>
+                                        <td>'.$value["sexo"].'</td>
+                                        <td>'.$value["puesto"].'</td>';
+                                        if($value["estatus"] == "Activo"){
+                                            echo '<td><button type="button" class="btn btn-success btn-sm text-white">'.$value["estatus"].'</button></td>';
+                                        }else{
+                                            echo '<td><button type="button" class="btn btn-danger btn-sm text-white">'.$value["estatus"].'</button></td>';
+                                        }
+                                        echo'
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-warning" idTrabajador="'.$value["id"].'"><i class="mdi mdi-account-edit" data-bs-toggle="modal" data-bs-target="#"></i></button>
+                                                <button type="button" class="btn btn-danger"><i class="mdi mdi-close-circle"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>';
+                                }
+                                ?>
                             </tbody>
-                            
                         </table>
-
                     </div>
-                    
-                    
                 </div>
             </div>
         </div>
@@ -114,27 +101,27 @@
                         <!-- Nombre -->
                         <div class="col-md-12">
                             <label for="Nombre" class="form-label fw-bold">Nombre</label>
-                            <input type="text" class="form-control" name="nombreTrabajador" placeholder="Nombre">
+                            <input type="text" class="form-control" name="nombreTrabajador" placeholder="Nombre" require>
                         </div>
                         <!-- Apellidos -->
                         <div class="col-md-12">
                             <label for="Apellidos" class="form-label fw-bold">Apellidos</label>
-                            <input type="text" class="form-control" name="apellidosTrabajador" placeholder="Apellidos">
+                            <input type="text" class="form-control" name="apellidosTrabajador" placeholder="Apellidos" require>
                         </div>
 
                     </div>
                     <div class="col-md-6 text-center ">
-                        <!-- Imagen -->
+                        <!-- Foto -->
                         <div class="col-lg-12">
-                            <img src="views/assets/images/users/default.jpg" width="140" height="140" class="bd-placeholder-img " alt="Foto Trabajador">
-                            <input class="form-control" type="file" required name="fotoTrabajador" />
+                            <img src="views/assets/images/users/default.jpg" width="140" height="140" class="bd-placeholder-img previsualisar" alt="Foto Trabajador">
+                            <input class="form-control fotoTrabajador" type="file" id="" name="fotoTrabajador" />
                         </div>
                     </div>
                     <div class="row col-md-12">
                         <!-- Contraseña -->
                         <div class="col-md-6">
                         <label for="Contraseña" class="form-label fw-bold">Contraseña</label>
-                            <input type="password" class="form-control" name="passTrabajador" placeholder="Contraseña">
+                            <input type="password" class="form-control" name="passTrabajador" placeholder="Contraseña" require>
                         </div>
                         <!-- Perfil -->
                         <div class="col-md-4">
@@ -144,12 +131,12 @@
                         <!-- Sexo -->
                         <div class="col-md-2">
                         <br>
-                            <input class="form-check-input" type="radio" name="sexoTrabajador">
+                            <input class="form-check-input" type="radio" name="sexoTrabajadorHombre">
                             <label class="form-check-label fw-bold" for="flexRadioDefault1">
                                 Hombre
                             </label>
                             <br>
-                            <input class="form-check-input" type="radio" name="sexoTrabajador">
+                            <input class="form-check-input" type="radio" name="sexoTrabajadorMujer">
                             <label class="form-check-label fw-bold" for="flexRadioDefault1">
                                 Mujer
                             </label>
@@ -158,7 +145,7 @@
                     <!-- Puesto -->
                     <div class="col-md-5">
                         <label for="inputState" class="form-label fw-bold">Puesto</label>
-                        <select id="inputState" class="form-select" name="puestoTrabajador">
+                        <select id="inputState" class="form-select" name="puestoTrabajador" require>
                         <option selected value="">Selecciona Puesto</option>
                         <?php
                                 $verPuesto = ControladorUsuarios::ctrBuscarPuesto();
@@ -174,7 +161,7 @@
                     
                     <div class="col-md-3">
                         <label for="inputState" class="form-label fw-bold">Estatus</label>
-                        <select id="inputState" class="form-select" name="estatusTrabajador">
+                        <select id="inputState" class="form-select" name="estatusTrabajador" require>
                         <option selected value="">Selecciona Estatus</option>
                         <?php
                                 $verEstatus = ControladorUsuarios::ctrBuscarEstatusTrabajador();
