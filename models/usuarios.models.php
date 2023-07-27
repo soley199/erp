@@ -18,7 +18,7 @@ class ModeloUsuarios{
     static public function mdlMostrarUsuarios($tabla, $columna, $valor){
 
         if($columna != null){
-            $stmt = Conexion::conectar()->prepare("SELECT TB.*,pu.puesto,pu.descripcion FROM $tabla TB JOIN puestos PU ON TB.idPuesto=PU.id WHERE TB.$columna = :$columna");
+            $stmt = Conexion::conectar()->prepare("SELECT TB.*, pu.puesto, pu.descripcion AS 'puDescripcion', ES.estatus, ES.descripcion AS 'esDescripcion' FROM $tabla TB JOIN puestos PU ON TB.idPuesto=PU.id JOIN estatus ES ON TB.idEstatus=ES.id WHERE TB.$columna = :$columna");
             $stmt -> bindParam(":".$columna,$valor, PDO::PARAM_STR);
             $stmt -> execute();
             return $stmt -> fetch();
@@ -69,7 +69,42 @@ class ModeloUsuarios{
         if($stmt -> execute()){
             return "ok";
         }else{
-            return"error";
+            return $stmt->errorInfo();
         }
 	}
+    /*=============================================
+	=            RECUPERAR Estatus Tranajador=
+	=============================================*/
+    static public function mdlEditTrabajador($tabla,$datos){
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, apellido = :apellido, sexo = :sexo, foto = :foto, nota = :nota, password = :password, accesoPanel = :accesoPanel, sistemaPerfil = :sistemaPerfil, idPuesto = :idPuesto, idEstatus = :idEstatus WHERE id = :id");
+        $stmt -> bindParam(":nombre",$datos["nombre"], PDO::PARAM_STR);
+        $stmt -> bindParam(":apellido",$datos["apellido"], PDO::PARAM_STR);
+        $stmt -> bindParam(":sexo",$datos["sexo"], PDO::PARAM_STR);
+        $stmt -> bindParam(":foto",$datos["foto"], PDO::PARAM_STR);
+        $stmt -> bindParam(":nota",$datos["nota"], PDO::PARAM_STR);
+        $stmt -> bindParam(":password",$datos["password"], PDO::PARAM_STR);
+        $stmt -> bindParam(":accesoPanel",$datos["accesoPanel"], PDO::PARAM_STR);
+        $stmt -> bindParam(":sistemaPerfil",$datos["sistemaPerfil"], PDO::PARAM_STR);
+        $stmt -> bindParam(":idPuesto",$datos["idPuesto"], PDO::PARAM_INT);
+        $stmt -> bindParam(":idEstatus",$datos["idEstatus"], PDO::PARAM_INT);
+        $stmt -> bindParam(":id",$datos["id"], PDO::PARAM_INT);
+        if($stmt -> execute()){
+            return "ok";
+        }else{
+            return $stmt->errorInfo();
+        } 
+    }
+    /*=============================================
+	=            BORRAR Tranajador=
+	=============================================*/
+    static public function mdlBorrarUsuario($tabla,$datos){
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+        $stmt -> bindParam(":id",$datos, PDO::PARAM_STR);
+        if($stmt -> execute()){
+            return "ok";
+        }else{
+            return $stmt->errorInfo();
+        } 
+
+    }
 }

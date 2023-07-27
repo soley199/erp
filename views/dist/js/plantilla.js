@@ -7,6 +7,14 @@ $(".tablas").DataTable();
 /*=============================================
 =Trabajadores=
 =============================================*/
+// Botones Apertura de Modales
+$("#btnAgregarNuevoTrabajador").click(function(){
+    $("#formNuevoTrabajador")[0].reset();
+    $('#modalAgregarTrabajador').modal('show');
+});
+
+
+
 // Subiendo foto trabajador
 $(".fotoTrabajador").change(function(){
     var imagen = this.files[0];
@@ -39,11 +47,73 @@ $(".fotoTrabajador").change(function(){
 });
 
 //Editar Trabajador 
-$(".btnEditarTrabajador").click(function(){
+$(".tablas").on("click", ".btnEditarTrabajador", function(){
+    $("#formEditarTrabajador")[0].reset();
     var idTrabajador = $(this).attr("idTrabajador");
-    console.log(idTrabajador);
-});
 
+    var datos = new FormData();
+    datos.append("idTrabajador", idTrabajador);
+    
+    $.ajax({
+        url: "ajax/usuarios.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function(respuesta){
+            console.log("respuesta", respuesta);
+            $("#idtrabajadorEditar").val(respuesta["id"]);
+            $("#numTarjetaActual").val(respuesta["numTarjeta"]);
+            $("#nombreTrabajadorEditar").val(respuesta["nombre"]);
+            $("#apellidosTrabajadorEditar").val(respuesta["apellido"]);
+            $("#perfilSistemaTrabajadorEdita").val(respuesta["sistemaPerfil"]);
+            $("#passTrabajadorEditar").val(respuesta["password"]);
+            $("#puestoTrabajadorEdita").html(respuesta["puesto"]);
+            $("#puestoTrabajadorEdita").val(respuesta["idPuesto"]);
+            $("#estatusTrabajadorEdita").html(respuesta["estatus"]);
+            $("#estatusTrabajadorEdita").val(respuesta["idEstatus"]);
+
+            if(respuesta["sexo"] == "H"){
+                $("#sexoTrabajadorHombreEditar").prop('checked', true);
+            }else{
+                $("#sexoTrabajadorMujerEditar").prop('checked', true);
+            }
+            $(".previsualisar").attr("src",respuesta["foto"]);
+            $("#fotoTrabajadorActual").val(respuesta["foto"]);
+        }
+    }); 
+});
+/*=============================================
+=ELIMINAR Trabajador=
+=============================================*/
+$(".tablas").on("click", ".btnEliminarTrabajador", function(){
+    idTrabajador = $(this).attr("idTrabajador");
+    foto = $(this).attr("foto");
+    numTarjeta = $(this).attr("numTarjeta");
+
+    Swal.fire({
+        title: 'Esta seguro de borrar al trabjador - '+numTarjeta,
+        text: "Se perdera toda su información",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                window.location ="index.php?ruta=rh_usuarios&idTrabajador="+idTrabajador+"&numTarjeta="+numTarjeta+"&foto="+foto;
+
+                // Swal.fire(
+                //     'Deleted!',
+                //     'Your file has been deleted.',
+                //     'success'
+                // )
+            }
+        })
+})
 /*=============================================
 =Fin Trabajadores=
 =============================================*/

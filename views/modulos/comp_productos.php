@@ -4,14 +4,12 @@
 <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Ingeniaria de Producto</h4>
+                <h4 class="page-title">Productos</h4>
                 <div class="ms-auto text-end">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="arb_inicio">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Library
-                        </li>
+                        <li class="breadcrumb-item"><a href="comp_inicio">Compras</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Productos</li>
                         </ol>
                     </nav>
                 </div>
@@ -25,6 +23,6 @@
 <!-- Container fluid  -->
 <!-- ============================================================== -->
 <div class="container-fluid">
- 
+    
     
 </div>

@@ -94,7 +94,10 @@ session_start();
             if($_GET["ruta"] == "arb_inicio" ||
               $_GET["ruta"] == "ing_Inicio" ||
               $_GET["ruta"] == "arb_salir" ||
-              $_GET["ruta"] == "rh_usuarios" ){
+              $_GET["ruta"] == "rh_usuarios" ||
+              $_GET["ruta"] == "comp_inicio" ||
+              $_GET["ruta"] == "comp_proveedores" ||
+              $_GET["ruta"] == "comp_productos"  ){
               include "modulos/".$_GET["ruta"].".php";
               ?>
           <?php
