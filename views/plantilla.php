@@ -125,5 +125,6 @@ session_start();
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <script src="views/dist/js/plantilla.js"></script>
+    <script src="views/dist/js/trabajadores.js"></script>
   </body>
 </html>
