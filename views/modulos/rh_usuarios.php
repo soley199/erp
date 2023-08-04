@@ -34,7 +34,7 @@
                     <br>
                     <br>
                     <div class="table-responsive">
-                        <table class="tablas table table-striped  dataTable" style="width:100%" >
+                        <table class="tablas table" style="width:100%" >
                             <thead>
                                 <tr>
                                     <th>Id</th>

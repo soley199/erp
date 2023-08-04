@@ -20,9 +20,9 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="ing_Inicio" aria-expanded="false">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="ing_inicio" aria-expanded="false">
                   <i class="mdi mdi-receipt"></i>
-                  <span class="hide-menu">Terjetas de Ingenieria</span>
+                  <span class="hide-menu">Ingenieria</span>
                 </a>
               </li>
               <li class="sidebar-item">

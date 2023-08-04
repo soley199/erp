@@ -31,7 +31,6 @@ class ControladorUsuarios{
         $tabla = "puestos";
 		$respuesta = ModeloUsuarios::mdlBuscarPuesto($tabla);
 		return $respuesta;
-
     }
     /* =====================================
     Busca los puestos para un Select
@@ -40,7 +39,6 @@ class ControladorUsuarios{
         $columna = "trabajadores";
 		$respuesta = ModeloUsuarios::mdlBuscarEstatusTrabajador($columna);
 		return $respuesta;
-
     }
     /* =====================================
     Agregar Usuario 

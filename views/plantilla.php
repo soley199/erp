@@ -24,6 +24,8 @@ session_start();
 
     <link href="views/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
 
+      
+
     
 
     <!-- script -->
@@ -57,6 +59,7 @@ session_start();
     <script src="views/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="views/assets/extra-libs/DataTables/datatables.min.js"></script>
     
+
     
     
     
@@ -92,12 +95,15 @@ session_start();
           <?php
           if(isset($_GET["ruta"])){
             if($_GET["ruta"] == "arb_inicio" ||
-              $_GET["ruta"] == "ing_Inicio" ||
+              $_GET["ruta"] == "ing_inicio" ||
               $_GET["ruta"] == "arb_salir" ||
               $_GET["ruta"] == "rh_usuarios" ||
               $_GET["ruta"] == "comp_inicio" ||
               $_GET["ruta"] == "comp_proveedores" ||
-              $_GET["ruta"] == "comp_productos"  ){
+              $_GET["ruta"] == "comp_productos" ||
+              $_GET["ruta"] == "ing_listadoTarjetas" ||
+              $_GET["ruta"] == "ing_tarjetaIng" ||
+              $_GET["ruta"] == "ing_lineas" ){
               include "modulos/".$_GET["ruta"].".php";
               ?>
           <?php
@@ -126,5 +132,7 @@ session_start();
     <!-- ============================================================== -->
     <script src="views/dist/js/plantilla.js"></script>
     <script src="views/dist/js/trabajadores.js"></script>
+    <script src="views/dist/js/ingenieria.js"></script>
+
   </body>
 </html>

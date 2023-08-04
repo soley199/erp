@@ -49,7 +49,7 @@ class ModeloUsuarios{
 
 	}
     /*=============================================
-	=            RECUPERAR Estatus Tranajador=
+	=            AGREGAR Tranajador=
 	=============================================*/
 	static public function mdlAddTrabajador($tabla,$datos){
         // var_dump($datos["idPuesto"]);

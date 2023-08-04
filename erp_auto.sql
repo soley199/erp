@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-08-2023 a las 00:50:55
+-- Tiempo de generación: 05-08-2023 a las 00:22:14
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -55,24 +55,26 @@ INSERT INTO `estatus` (`id`, `estatus`, `tabla`, `descripcion`) VALUES
 
 CREATE TABLE `lineasproductos` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(70) NOT NULL,
+  `nombre` varchar(70) NOT NULL,
   `descripcion` text DEFAULT NULL,
-  `foto` varchar(200) DEFAULT NULL
+  `foto` varchar(200) DEFAULT NULL,
+  `color` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lineasproductos`
 --
 
-INSERT INTO `lineasproductos` (`id`, `Nombre`, `descripcion`, `foto`) VALUES
-(1, 'Luk SM', NULL, NULL),
-(2, 'Luk CM', NULL, NULL),
-(3, 'Golden Friction', NULL, NULL),
-(4, 'Equipo Original', NULL, NULL),
-(5, 'Cartek Xtreme', NULL, NULL),
-(6, 'Cartek Pro', NULL, NULL),
-(7, 'Canabrake', NULL, NULL),
-(8, 'Canabrake B&D', NULL, NULL);
+INSERT INTO `lineasproductos` (`id`, `nombre`, `descripcion`, `foto`, `color`) VALUES
+(1, 'Luk SM', NULL, NULL, 'bg-success'),
+(2, 'Luk CM', NULL, NULL, 'bg-success'),
+(3, 'Golden Friction', NULL, NULL, 'bg-danger'),
+(4, 'Equipo Original', NULL, NULL, 'bg-danger'),
+(5, 'Cartek Xtreme', NULL, NULL, 'bg-cyan'),
+(6, 'Cartek Pro', NULL, NULL, 'bg-cyan'),
+(7, 'Canabrake', NULL, NULL, 'bg-info'),
+(8, 'Canabrake B&D', NULL, NULL, 'bg-info'),
+(9, 'PRUEBA', 'aLAZAR', NULL, 'bg-primary');
 
 -- --------------------------------------------------------
 
@@ -9137,7 +9139,7 @@ ALTER TABLE `estatus`
 -- AUTO_INCREMENT de la tabla `lineasproductos`
 --
 ALTER TABLE `lineasproductos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `materiales`
