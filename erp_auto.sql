@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-08-2023 a las 00:22:14
+-- Tiempo de generación: 16-08-2023 a las 00:41:08
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -73,8 +73,7 @@ INSERT INTO `lineasproductos` (`id`, `nombre`, `descripcion`, `foto`, `color`) V
 (5, 'Cartek Xtreme', NULL, NULL, 'bg-cyan'),
 (6, 'Cartek Pro', NULL, NULL, 'bg-cyan'),
 (7, 'Canabrake', NULL, NULL, 'bg-info'),
-(8, 'Canabrake B&D', NULL, NULL, 'bg-info'),
-(9, 'PRUEBA', 'aLAZAR', NULL, 'bg-primary');
+(8, 'Canabrake B&D', NULL, NULL, 'bg-info');
 
 -- --------------------------------------------------------
 
@@ -1873,101 +1872,6 @@ INSERT INTO `nomenclaturas` (`id`, `nomenclatura`, `idMaterial`, `idTipoMaterial
 (1755, 'SE-2197', 4, 11),
 (1756, 'SE-2248', 4, 11),
 (1757, 'SE-2250', 4, 11);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `preoveedores`
---
-
-CREATE TABLE `preoveedores` (
-  `id` int(11) NOT NULL,
-  `proveedor` varchar(50) NOT NULL,
-  `localidad` varchar(15) DEFAULT NULL,
-  `gastoImportacion` decimal(12,3) DEFAULT NULL,
-  `observaciones` text DEFAULT NULL,
-  `calificacion` decimal(12,2) DEFAULT NULL,
-  `idEstatus` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `preoveedores`
---
-
-INSERT INTO `preoveedores` (`id`, `proveedor`, `localidad`, `gastoImportacion`, `observaciones`, `calificacion`, `idEstatus`) VALUES
-(1, 'KENNETH', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(2, 'JIDA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(3, 'NUCAP CANADA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(4, 'NUADI', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(5, 'UTIL CANADA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(6, 'QUELTERO', 'NACIONALES', 0.000, '', 0.00, 6),
-(7, 'ALMATIS GmbH', 'NACIONALES', 0.000, '', 0.00, 6),
-(8, 'ALQUIMIA MEXICANA S.deR.L.', 'NACIONALES', 0.000, '', 0.00, 6),
-(9, 'ALVEG DISTRIBUCION QUIMICA', 'NACIONALES', 0.000, '', 0.00, 6),
-(10, 'AMERICAN METAL FIBERS INC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(11, 'ANTHRACITE INDUSTRIES', 'NACIONALES', 0.000, '', 0.00, 6),
-(12, 'ABASTECEDORA DE PRODUCTOS VALLEJO (APROVAL)', 'NACIONALES', 0.000, '', 0.00, 6),
-(13, 'ASBURY CARBONS INC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(14, 'AYASA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(15, 'CATALISE', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(16, 'CARDOLITE CORPORACION', 'NACIONAL', 0.000, '', 0.00, 6),
-(17, 'CIA SHERWIN WILLIAMS', 'NACIONAL', 0.000, '', 0.00, 6),
-(18, 'CNPC POWDER', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(19, 'COMERCIALIZADORA 3JR', 'NACIONAL', 0.000, '', 0.00, 6),
-(20, 'CREAFILL FIBERS CORP', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(21, 'DERIVADOS MACROQUIMICOS JRS', 'NACIONAL', 0.000, '', 0.00, 6),
-(22, 'DIVSA', 'NACIONAL', 0.000, '', 0.00, 6),
-(23, 'DUPONT DE MEXICO', 'NACIONAL', 0.000, '', 0.00, 6),
-(24, 'DUREZ', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(25, 'ENRIQUE ALFONSO CERON BARRERA', 'NACIONAL', 0.000, '', 0.00, 6),
-(26, 'EURO RIGAN SLR', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(27, 'FENO RESINAS', 'NACIONAL', 0.000, '', 0.00, 6),
-(28, 'FIBROX TECHNOLOGY', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(29, 'FORMADORA DE TUERCAS MEXICANAS S.A DE C.V (FORTUME', 'NACIONAL', 0.000, '', 0.00, 6),
-(30, 'GLOBAL LINK MATERIALS', 'NACIONAL', 0.000, '', 0.00, 6),
-(31, 'GONZALEZ CANO Y CIA', 'NACIONAL', 0.000, '', 0.00, 6),
-(32, 'GREEN STEEL SOLANA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(33, 'GRUPO INDUSTRIAL MORGAN', 'NACIONAL', 0.000, '', 0.00, 6),
-(34, 'GRUPO POCHTECA', 'NACIONAL', 0.000, '', 0.00, 6),
-(35, 'HEXION', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(36, 'HETEROCICLICOS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(37, 'NITROCOR (HASCOR)', 'NACIONAL', 0.000, '', 0.00, 6),
-(38, 'IBI', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(39, 'INDUSTRIAS ROSBERG S.A. DE C.V.', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(40, 'ITAPROCHIM', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(41, 'KEIRON CHEMICALS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(42, 'LAC MACHINE', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(43, 'LINYI', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(44, 'MINERA ROCA RODANDO', 'NACIONAL', 0.000, '', 0.00, 6),
-(45, 'MOCA Y COMPA??A', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(46, 'MOGRAFCO, S.A. DE C.V.', 'NACIONAL', 0.000, '', 0.00, 6),
-(47, 'MOMENTIVE SPECIALTY CHEMICALS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(48, 'NORTH AMERICAN HOGANAS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(49, 'PAC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(50, 'PALMER', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(51, 'PALOMO', 'NACIONAL', 0.000, '', 0.00, 6),
-(52, 'QUIMICOS Y POLIMEROS', 'NACIONAL', 0.000, '', 0.00, 6),
-(53, 'RECICLADOS DE CAUCHO DE PACHUCA', 'NACIONAL', 0.000, '', 0.00, 6),
-(54, 'REPRESENTANCIONES TECNICAS, S.A. DE C.V.', 'NACIONAL', 0.000, '', 0.00, 6),
-(55, 'SADECA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(56, 'STERLING FIBERS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(57, 'SUNNY METAL', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(58, 'SUPERIOR GRAPHITE', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(59, 'TEIJIN ARAMID', 'NACIONAL', 0.000, '', 0.00, 6),
-(60, 'TIGER DRYLAC', 'NACIONAL', 0.000, '', 0.00, 6),
-(61, 'THERMOFIBER', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(62, 'TRIBOTEC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(63, 'TROQUELES TECNO FORM', 'NACIONAL', 0.000, '', 0.00, 6),
-(64, 'ULTRA CHEM', 'NACIONAL', 0.000, '', 0.00, 6),
-(65, 'VENETA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(66, 'WASHINGTON MILLS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(67, 'WATSON PHILLIPS', 'NACIONAL', 0.000, '', 0.00, 6),
-(68, 'XINLIDA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(69, 'ZEON CHEMICALS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(70, '2Dto3D S.R.L.S', 'INTERNACIONAL', 0.000, '', 0.00, 6),
-(71, 'NUCAP US', 'INTERNACIONAL', 0.000, NULL, 0.00, 6),
-(72, 'Resortes Plus', 'NACIONALES', 0.000, NULL, 0.00, 6),
-(73, 'NUCAP EUROPE', 'INTERNACIONAL', 0.000, NULL, NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -8703,6 +8607,101 @@ INSERT INTO `productoprovedor` (`id`, `producto`, `precio`, `cantidadMinima`, `t
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `id` int(11) NOT NULL,
+  `proveedor` varchar(50) NOT NULL,
+  `localidad` varchar(15) DEFAULT NULL,
+  `gastoImportacion` decimal(12,3) DEFAULT NULL,
+  `observaciones` text DEFAULT NULL,
+  `calificacion` decimal(12,2) DEFAULT NULL,
+  `idEstatus` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`id`, `proveedor`, `localidad`, `gastoImportacion`, `observaciones`, `calificacion`, `idEstatus`) VALUES
+(1, 'KENNETH', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(2, 'JIDA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(3, 'NUCAP CANADA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(4, 'NUADI', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(5, 'UTIL CANADA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(6, 'QUELTERO', 'NACIONALES', 0.000, '', 0.00, 6),
+(7, 'ALMATIS GmbH', 'NACIONALES', 0.000, '', 0.00, 6),
+(8, 'ALQUIMIA MEXICANA S.deR.L.', 'NACIONALES', 0.000, '', 0.00, 6),
+(9, 'ALVEG DISTRIBUCION QUIMICA', 'NACIONALES', 0.000, '', 0.00, 6),
+(10, 'AMERICAN METAL FIBERS INC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(11, 'ANTHRACITE INDUSTRIES', 'NACIONALES', 0.000, '', 0.00, 6),
+(12, 'ABASTECEDORA DE PRODUCTOS VALLEJO (APROVAL)', 'NACIONALES', 0.000, '', 0.00, 6),
+(13, 'ASBURY CARBONS INC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(14, 'AYASA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(15, 'CATALISE', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(16, 'CARDOLITE CORPORACION', 'NACIONAL', 0.000, '', 0.00, 6),
+(17, 'CIA SHERWIN WILLIAMS', 'NACIONAL', 0.000, '', 0.00, 6),
+(18, 'CNPC POWDER', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(19, 'COMERCIALIZADORA 3JR', 'NACIONAL', 0.000, '', 0.00, 6),
+(20, 'CREAFILL FIBERS CORP', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(21, 'DERIVADOS MACROQUIMICOS JRS', 'NACIONAL', 0.000, '', 0.00, 6),
+(22, 'DIVSA', 'NACIONAL', 0.000, '', 0.00, 6),
+(23, 'DUPONT DE MEXICO', 'NACIONAL', 0.000, '', 0.00, 6),
+(24, 'DUREZ', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(25, 'ENRIQUE ALFONSO CERON BARRERA', 'NACIONAL', 0.000, '', 0.00, 6),
+(26, 'EURO RIGAN SLR', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(27, 'FENO RESINAS', 'NACIONAL', 0.000, '', 0.00, 6),
+(28, 'FIBROX TECHNOLOGY', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(29, 'FORMADORA DE TUERCAS MEXICANAS S.A DE C.V (FORTUME', 'NACIONAL', 0.000, '', 0.00, 6),
+(30, 'GLOBAL LINK MATERIALS', 'NACIONAL', 0.000, '', 0.00, 6),
+(31, 'GONZALEZ CANO Y CIA', 'NACIONAL', 0.000, '', 0.00, 6),
+(32, 'GREEN STEEL SOLANA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(33, 'GRUPO INDUSTRIAL MORGAN', 'NACIONAL', 0.000, '', 0.00, 6),
+(34, 'GRUPO POCHTECA', 'NACIONAL', 0.000, '', 0.00, 6),
+(35, 'HEXION', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(36, 'HETEROCICLICOS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(37, 'NITROCOR (HASCOR)', 'NACIONAL', 0.000, '', 0.00, 6),
+(38, 'IBI', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(39, 'INDUSTRIAS ROSBERG S.A. DE C.V.', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(40, 'ITAPROCHIM', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(41, 'KEIRON CHEMICALS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(42, 'LAC MACHINE', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(43, 'LINYI', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(44, 'MINERA ROCA RODANDO', 'NACIONAL', 0.000, '', 0.00, 6),
+(45, 'MOCA Y COMPA??A', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(46, 'MOGRAFCO, S.A. DE C.V.', 'NACIONAL', 0.000, '', 0.00, 6),
+(47, 'MOMENTIVE SPECIALTY CHEMICALS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(48, 'NORTH AMERICAN HOGANAS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(49, 'PAC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(50, 'PALMER', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(51, 'PALOMO', 'NACIONAL', 0.000, '', 0.00, 6),
+(52, 'QUIMICOS Y POLIMEROS', 'NACIONAL', 0.000, '', 0.00, 6),
+(53, 'RECICLADOS DE CAUCHO DE PACHUCA', 'NACIONAL', 0.000, '', 0.00, 6),
+(54, 'REPRESENTANCIONES TECNICAS, S.A. DE C.V.', 'NACIONAL', 0.000, '', 0.00, 6),
+(55, 'SADECA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(56, 'STERLING FIBERS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(57, 'SUNNY METAL', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(58, 'SUPERIOR GRAPHITE', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(59, 'TEIJIN ARAMID', 'NACIONAL', 0.000, '', 0.00, 6),
+(60, 'TIGER DRYLAC', 'NACIONAL', 0.000, '', 0.00, 6),
+(61, 'THERMOFIBER', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(62, 'TRIBOTEC', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(63, 'TROQUELES TECNO FORM', 'NACIONAL', 0.000, '', 0.00, 6),
+(64, 'ULTRA CHEM', 'NACIONAL', 0.000, '', 0.00, 6),
+(65, 'VENETA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(66, 'WASHINGTON MILLS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(67, 'WATSON PHILLIPS', 'NACIONAL', 0.000, '', 0.00, 6),
+(68, 'XINLIDA', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(69, 'ZEON CHEMICALS', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(70, '2Dto3D S.R.L.S', 'INTERNACIONAL', 0.000, '', 0.00, 6),
+(71, 'NUCAP US', 'INTERNACIONAL', 0.000, NULL, 0.00, 6),
+(72, 'Resortes Plus', 'NACIONALES', 0.000, NULL, 0.00, 6),
+(73, 'NUCAP EUROPE', 'INTERNACIONAL', 0.000, NULL, NULL, 6);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `puestos`
 --
 
@@ -9086,17 +9085,17 @@ ALTER TABLE `nomenclaturas`
   ADD KEY `idTipoMaterial` (`idTipoMaterial`);
 
 --
--- Indices de la tabla `preoveedores`
---
-ALTER TABLE `preoveedores`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `productoprovedor`
 --
 ALTER TABLE `productoprovedor`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idEstatus` (`idEstatus`);
+
+--
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `puestos`
@@ -9154,16 +9153,16 @@ ALTER TABLE `nomenclaturas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1758;
 
 --
--- AUTO_INCREMENT de la tabla `preoveedores`
---
-ALTER TABLE `preoveedores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
-
---
 -- AUTO_INCREMENT de la tabla `productoprovedor`
 --
 ALTER TABLE `productoprovedor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6697;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT de la tabla `puestos`

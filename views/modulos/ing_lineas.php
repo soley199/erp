@@ -67,7 +67,7 @@
                                         <td>
                                             <div class="btn-group">
                                                 <button type="button" data-bs-toggle="modal" data-bs-target="#modalEditarLinea" class="btn btn-warning btnEditarLinea" idLinea="'.$value["id"].'"><i class="mdi mdi-account-edit" ></i></button>
-                                                <button type="button" class="btn btn-danger btnEliminarLinea" idLinea="'.$value["id"].'" foto="'.$value["foto"].'" ><i class="mdi mdi-close-circle"></i></button>
+                                                <button type="button" class="btn btn-danger btnEliminarLinea" idLineaElimina="'.$value["id"].'" nombreLineaElimina="'.$value["nombre"].'" ><i class="mdi mdi-close-circle"></i></button>
                                             </div>
                                         </td>
                                     </tr>';
@@ -192,3 +192,8 @@
         </div>
     </div>
 </div>
+
+<?php
+$borrarLinea = new ControladorIngenieria();
+$borrarLinea -> ctrBorrarlinea();
+?>

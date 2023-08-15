@@ -22,11 +22,7 @@ session_start();
     <link href="views/dist/css/style.min.css" rel="stylesheet" />
     <link href="views/dist/css/plantilla.css" rel="stylesheet" />
 
-    <link href="views/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-
-      
-
-    
+    <link href="views/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" />    
 
     <!-- script -->
     <!-- ============================================================== -->
@@ -58,13 +54,6 @@ session_start();
     <script src="views/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
     <script src="views/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="views/assets/extra-libs/DataTables/datatables.min.js"></script>
-    
-
-    
-    
-    
-   
-
 
   </head>
 
@@ -133,6 +122,7 @@ session_start();
     <script src="views/dist/js/plantilla.js"></script>
     <script src="views/dist/js/trabajadores.js"></script>
     <script src="views/dist/js/ingenieria.js"></script>
+    <script src="views/dist/js/compras.js"></script>
 
   </body>
 </html>

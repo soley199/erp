@@ -8,7 +8,6 @@ $("#btnAgregarNuevoTrabajador").click(function(){
 });
 
 
-
 // Subiendo foto trabajador
 $(".fotoTrabajador").change(function(){
     var imagen = this.files[0];

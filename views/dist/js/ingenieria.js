@@ -51,3 +51,32 @@ $(".tablas").on("click", ".btnEditarLinea", function(){
         }
     }); 
 });
+
+/*=============================================
+=ELIMINAR LINEA=
+=============================================*/
+$(".tablas").on("click", ".btnEliminarLinea", function(){
+    idLineaElimina = $(this).attr("idLineaElimina");
+    nombreLineaElimina = $(this).attr("nombreLineaElimina");
+
+    Swal.fire({
+        title: 'Esta seguro de borrar La Linea - '+nombreLineaElimina,
+        text: "Se perdera toda su información",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                window.location ="index.php?ruta=ing_lineas&idLineaElimina="+idLineaElimina+"&nombreLineaElimina="+nombreLineaElimina;
+
+                // Swal.fire(
+                //     'Deleted!',
+                //     'Your file has been deleted.',
+                //     'success'
+                // )
+            }
+        })
+})
