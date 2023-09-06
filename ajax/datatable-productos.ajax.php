@@ -23,7 +23,7 @@ class TablaProoductos{
             for($i = 0; $i < count($productosProveedor); $i++){
               $imagen = "<img src='".$productosProveedor[$i]["foto"]."' width='50px'>";
               $datosJson.= '[
-                "'.($i + 1).'",
+                "'.($productosProveedor[$i]["id"]).'",
                 "'.$productosProveedor[$i]["producto"].'",
                 "'.$imagen.'",
                 "'.$productosProveedor[$i]["proveedor"].'",

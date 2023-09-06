@@ -61,6 +61,75 @@ var tablaproductosProveedor =$(".tablaproductosProveedor").DataTable({
 });
 
 /*=============================================
-    =   TABLA SELECICON COLUMNA BSUCADOR      =
-    =============================================*/
-   
+=   TABLA SELECICON COLUMNA BSUCADOR      =
+=============================================*/
+
+$("#btnAgregarNuevoProducto").click(function(){
+    $("#formNuevoProductoProveedor")[0].reset();
+    $('#modalNuevoProductoProveedor').modal('show');
+});
+
+
+// Previsualizar foto Producto
+$(".fotoProducto").change(function(){
+    var imagen = this.files[0];
+    // VALIDA SI ES JPG O PNG
+    if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png"){
+        $(".fotoProducto").val("");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: 'La foto debe ser formato PNG / JPEG'
+        });
+        // VALIDA TAMAÑO DE 5 MB
+    }else if(imagen["size"] > 5242880){
+        $(".fotoProducto").val("");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: 'No debe de pesar mas de 5 mb'
+        });        
+    }else{
+        // VISUALIZAMOS IAMGEN EN EL FORMULARIO
+        var  datosImagen = new FileReader;
+        datosImagen.readAsDataURL(imagen);
+
+        $(datosImagen).on("load", function(e){
+            var rutaImagen = e.target.result;
+            $(".previsualisar").attr("src", rutaImagen);
+        })
+    }
+});
+
+
+// VISUALIZAMOS IAMGEN EN EL FORMULARIO
+$("#btnBuscarProvedorProductoProvedorNuevo").click(function(){
+    // $("#formNuevoProductoProveedor")[0].reset();
+    $('#modalTablaProvedoresProductoProvedorNuevo').modal('show');
+    // alert("Provedor");
+});
+
+// VISUALIZAMOS IAMGEN EN EL FORMULARIO
+$("#btnBuscarMaterialProductoProvedorNuevo").click(function(){
+    // $("#formNuevoProductoProveedor")[0].reset();
+    // $('#modalNuevoProductoProveedor').modal('show');
+    alert("Material");
+});
+// VISUALIZAMOS IAMGEN EN EL FORMULARIO
+$("#btnBuscarTipoMaterialProductoProvedorNuevo").click(function(){
+    // $("#formNuevoProductoProveedor")[0].reset();
+    // $('#modalNuevoProductoProveedor').modal('show');
+    alert("Tipo Material");
+});
+// VISUALIZAMOS IAMGEN EN EL FORMULARIO
+$("#btnBuscarNomenclaturaProductoProvedorNuevo").click(function(){
+    // $("#formNuevoProductoProveedor")[0].reset();
+    // $('#modalNuevoProductoProveedor').modal('show');
+    alert("Nomenclatura");
+});
+// VISUALIZAMOS IAMGEN EN EL FORMULARIO
+$("#btnBuscarUnidadMedidaProductoProvedorNuevo").click(function(){
+    // $("#formNuevoProductoProveedor")[0].reset();
+    // $('#modalNuevoProductoProveedor').modal('show');
+    alert("UnidadMedida");
+});
